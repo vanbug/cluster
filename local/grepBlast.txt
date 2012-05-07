@@ -1,0 +1,15 @@
+contruct_seq="CCGCCGGGATCACTCTCGGCATGGACGAGCTGTACAAGCCGAAGTTCCTATTCTCTAGAAAGTATAGGAACTTCTCCCTTGCTGGAGCTCCCCGAATC"
+inc=function(x)seq(1,49,by=1)+x
+s=lapply(1:49,inc)
+seqwr=strsplit(contruct_seq,NULL)[[1]]
+gfpper=unlist(lapply(s,function(x)paste(seqwr[x],collapse="")))
+N_match=lapply(gfpper,function(x)grep(x,N));NO_match=lapply(gfpper,function(x)grep(x,N00s))
+# full seq match pattern
+s_fullN=lapply(0:1220,function(x)seq(1,49,by=1)+x)
+s_fullC=lapply(0:1222,function(x)seq(1,49,by=1)+x)
+# full match
+matchN=lapply(unlist(lapply(s_fullN,function(x)paste(strsplit(fullN,NULL)[[1]][x],collapse=""))),function(x)grep(x,N))
+matchC=lapply(unlist(lapply(s_fullC,function(x)paste(strsplit(fullC,NULL)[[1]][x],collapse=""))),function(x)grep(x,C))
+##################################################################################################################################################
+
+GCTGGAGCTCCCCGAATCGAGCAGCTGGACGGAGTGGATGATGGCACAGACAGCGAGGTGAGCAAGGGCGAGGAGCTGTTCACCGGGGTGGTGCCCAT

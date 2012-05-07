@@ -1,0 +1,23 @@
+track type=bigWig name="NA10HD_H3K4me3" description="NA10HD_H3K4me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/kh_lab_wigs/NA10HD_H3K4me3_HT2_no.bw
+
+track type=bigWig name="GSC_NA10HD_H3K4me3" description="GSC_NA10HD_H3K4me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/gsc_wigs/NA10HD_H3K4me3_FDR_01_mc_triangle_standard.bw
+
+track type=bigWig name="NA10HD+Meis1_H3K4me3" description="NA10HD+Meis1_H3K4me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/kh_lab_wigs/NA10HD+Meis1_H3K4me3_HT2_no.bw
+
+track type=bigWig name="GSC_NA10HD+Meis1_H3K4me3" description="GSC_NA10HD+Meis1_H3K4me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/gsc_wigs/NA10HD+Meis1_H3K4me3_FDR_01_mc_triangle_standard.bw
+
+track type=bigWig name="NA10HD_H3K27me3" description="NA10HD_H3K27me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/kh_lab_wigs/NA10HD_H3K27me3_HT2_no.bw
+
+track type=bigWig name="GSC_NA10HD_H3K27me3" description="GSC_NA10HD_H3K27me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/gsc_wigs/NA10HD_H3K27me3_FDR_01_mc_triangle_standard.bw
+
+track type=bigWig name="NA10HD+Meis1_H3K27me3" description="NA10HD+Meis1_H3K27me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/kh_lab_wigs/NA10HD+Meis1_H3K27me3_HT2_no.bw
+
+track type=bigWig name="GSC_NA10HD+Meis1_H3K27me3" description="GSC_NA10HD+Meis1_H3K27me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/gsc_wigs/NA10HD+Meis1_H3K27me3_FDR_01_mc_triangle_standard.bw
+
+track type=bigWig name="NA10HD_H3K9me3" description="NA10HD_H3K9me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/kh_lab_wigs/NA10HD_H3K9me3_HT2_no.bw
+
+track type=bigWig name="GSC_NA10HD_H3K9me3" description="GSC_NA10HD_H3K9me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/gsc_wigs/NA10HD_H3K9me3_FDR_01_mc_triangle_standard.bw
+
+track type=bigWig name="NA10HD+Meis1_H3K9me3" description="NA10HD+Meis1_H3K9me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/kh_lab_wigs/NA10HD+Meis1_H3K9me3_HT2_no.bw
+
+track type=bigWig name="GSC_NA10HD+Meis1_H3K9me3" description="GSC_NA10HD+Meis1_H3K9me3" maxHeightPixels=40:40:20 visibility=full priority=79 bigDataUrl=http://www.bcgsc.ca/downloads/cydney-test/kh_lab/gsc_wigs/NA10HD+Meis1_H3K9me3_FDR_01_mc_triangle_standard.bw

@@ -1,0 +1,3 @@
+#label, organism, chromosome, start, end, description, upstream, downstream
+RBP&, mouse, mm9, chr4, 148823811, 148829077, "involved in something", 0, 0
+RBP7_400k, mouse, mm9, chr4, 148823811, 148829077, "RBP7 with a 400k zoom out", 400000, 400000

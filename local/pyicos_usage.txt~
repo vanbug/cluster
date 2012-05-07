@@ -1,0 +1,22 @@
+# pyicos convert bedpk to bed
+pyicos convert bod1L.sam.extended.bed.clipped_norm_subtract.bedpk bod1L.bed -f bed_pk -F bed -o &
+
+# pyicos normalize sample wrt control
+pyicos normalize bod1L.sam.extended.bed.clipped.bedpk s5.bam.unique.rmdup.extended.repaired.bed.bedpk bod1L.sam.extended.bed.clipped_norm.bedpk
+
+# pyicos subtract control from normalized sample
+pyicos subtract bod1L.sam.extended.bed.clipped_norm.bedpk s5.bam.unique.rmdup.extended.repaired.bed.bedpk bod1L.sam.extended.bed.clipped_norm_subtract.bedpk
+
+# pyicos convert bedpk back to bed
+pyicos convert bod1L.sam.extended.bed.clipped_norm_subtract.bedpk bod1L.bed -f bed_pk -F bed -o &
+
+---------------------------------------------------------------------------------------------------------
+Case Study
+# finding extension length
+pyicos strcorr cebpa.bed corr.png -f bed --showplots
+# extending
+pyicos extend cebpa.bed cebpa_ext100.bed 114 -f bed -F bed -o --label cebpa_ext100
+pyicos extend control.bed control_ext100.bed 114 -f bed -F bed -o --label control_ext100
+pyicos convert cebpa_ext100.bed cebpa_ext100.wig -f bed -F bed_wig --open-output --label 1.cebpa_ext100
+pyicos subtract cebpa_ext100.bed control_ext100.bed subtracted.wig -f bed -o -F bed_wig --open-output --label 3.subtracted
+

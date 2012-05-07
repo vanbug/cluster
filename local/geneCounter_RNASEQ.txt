@@ -1,0 +1,10 @@
+./installDBRNASEQ.pl -n arab -v 9 -d TAIR -i ~/softs/GENE-counter-v0.4.4/TAIR9SJ
+
+Hi,
+I encountered another basic error.
+
+I was trying to install reference database from GENE-counter database / sequence data archive using 
+./installDBRNASEQ.pl -n arab -v 9 -d TAIR -i ~/softs/GENE-counter-v0.4.4/TAIR9SJ
+
+# configuring CASHX_2.3
+./configure --with-mysql=yes --with-mysqlhost=localhost --with-mysqldb=CASHX_DB --with-mysqluser=root --with-mysqlpass=bugvan4420

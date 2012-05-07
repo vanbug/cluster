@@ -1,0 +1,28 @@
+# various useful shell scripts
+
+# removing random chr from the geneList of UCSC (obtained thru HOMER)
+grep -v -w '.*random' geneList_2500.txt > geneList_2500_nonRandomCHr.txt
+
+# sorting the genelist
+sed -e '1d' *r.txt | sort -k2.5,2 -k3 > geneList_2500_nonRandomCHr_sorted.txt
+
+# filtering the uniq elements or counting
+sed -e '1d' geneList_2500_nonRandomCHr_sorted.txt | cut -f3 | uniq | wc -l
+
+
+
+####################
+Fetching refseq uniq gene list
+Go to genome browser tables at http://genome.ucsc.edu/cgi-bin/hgTables?command=start
+group: Genes and Gene Prediction Tracks     track: RefSeq Genes     
+table:  refGene and output format : selected fields from primary and related tables
+
+#select whatever columns you need, for this case (#name	chrom	strand	txStart	txEnd	exonCount	name2)
+#then select the uniq genes using a mixture of sort and sed and then put back the header on
+# it gives you around 23283 uniq genes
+sed 1d refseq_completeGeneList.txt | sort -u -k7 | sort -k2,2 -k4,4n > refseqUniqGeneList.txt
+head -n 1 refseq_completeGeneList.txt > header
+cat header refseqUniqGeneList.txt > yo
+mv yo refseqUniqGeneList.txt
+# reordering so that intersectBed works
+awk '{print $2"\t"$4"\t"$5"\t"$3"\t"$1"\t"$7"\t"$6}' refseqUniqGeneList.txt > refseqUniqGeneList

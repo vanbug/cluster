@@ -1,0 +1,9 @@
+contruct_seq="CCGCCGGGATCACTCTCGGCATGGACGAGCTGTACAAGCCGAAGTTCCTATTCTCTAGAAAGTATAGGAACTTCTCCCTTGCTGGAGCTCCCCGAATC"
+inc=function(x)seq(1,49,by=1)+x
+s=lapply(1:49,inc)
+seqwr=strsplit(contruct_seq,NULL)[[1]]
+gfpper=unlist(lapply(s,function(x)paste(seqwr[x],collapse="")))
+N_match=lapply(gfpper,function(x)grep(x,N));NO_match=lapply(gfpper,function(x)grep(x,N00s))
+##################################################################################################################################################
+
+GCTGGAGCTCCCCGAATCGAGCAGCTGGACGGAGTGGATGATGGCACAGACAGCGAGGTGAGCAAGGGCGAGGAGCTGTTCACCGGGGTGGTGCCCAT

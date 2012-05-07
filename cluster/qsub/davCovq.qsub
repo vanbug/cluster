@@ -1,0 +1,19 @@
+# Qsub script for running the davCovq.qsub (BED->COV)
+# Author : Sukhdeep Singh
+# Organization : Max Planck
+######################################################################
+
+#!/bin/bash
+# qsub parameters beginning with #$
+#before executing the command thange to the working directory
+#$ -cwd
+#submit the complete environment to the execution host
+#$ -V
+# merge stdout and stderr
+#$ -j y
+# set your output file
+#$ -o output.txt
+
+#now we can run our command here.
+R --vanilla --slave --args $1 $2 < /home/genom/sukhdeeps/src/davCov.R
+

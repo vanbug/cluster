@@ -1,0 +1,7 @@
+# reading args
+args=commandArgs(TRUE)
+# fetching fastq and adapter files
+
+fastqFiles=args[1]
+com=paste('cp template.qsub ',fastqFiles[1],'.qsub',sep='')
+system(com)

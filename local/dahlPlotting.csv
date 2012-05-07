@@ -1,0 +1,43 @@
+# dahl data plotting in R
+read.csv('~/chip/projects/dahl/peaks.csv',sep='\t')
+deformed=with(peaks,data.frame(samples,L313.../L313....1,s5.../s5....1,Nij..../Nij.....1))
+colnames(deformed)[2]="DahlRatio"
+colnames(deformed)[3]="RotterdamRatio"
+colnames(deformed)[4]="NijmegenRatio"
+colnames(melted)[2]="experiments"
+melted=melt(deformed)
+
+# bar plot constructed
+ggplot(melted,aes(x=samples,y=value,fill=experiments))+geom_bar(alpha=0.8,position="dodge")+scale_fill_manual(values=(brewer.pal(8,"Set1")))+geom_abline(intercept=1,slope=0,color="red")+opts(title="Dahl Sequenced data - Peak calling Comparisons (with Nijmegen, Rotterdam and Dahl controls)",axis.text.y = theme_text(angle = 360,hjust=0),axis.title.y = theme_text(size=12,angle=360))+scale_x_discrete(name="Samples")+scale_y_continuous(name="samplePeaks\n-------------------\ncontrolPeaks")
+
+# collective peak plotting
+peaks2<-read.csv('~/chip/projects/rotterdam/peaks.csv',sep='\t')
+# melting, no need for 1:18 limit, it is removed, the lines are deleted corresponding to rott data
+a=melt(peaks2[1:18,])
+# plotting
+ggplot(a,aes(x=samples,y=value,fill=variable))+geom_bar(position="dodge",alpha=0.8)+opts(title="Peak Calling comparison for Nijmegen,Rotterdam, Dahl experiments",axis.text.x=theme_text(size=12,angle=0),axis.title.x=theme_text(size=14,face="bold",colour="#1980AF"),axis.title.y=theme_text(size=14,face="bold",colour="#1980AF"))+scale_fill_manual(values=(brewer.pal(8,"Set1")))+scale_x_discrete(name="Samples")+scale_y_continuous(name="No. of\nPeaks")
+# saving
+ggsave('~/chip/projects/rotterdam/peaks_collective2.png')
+
+# facets cool graph
+ggplot(a,aes(x=samples,y=value,fill=variable))+geom_bar(position="dodge",alpha=0.8)+opts(title="Peak Calling comparison for Nijmegen,Rotterdam, Dahl experiments",axis.text.x=theme_text(size=12,angle=90),axis.title.x=theme_text(size=14,face="bold",colour="#1980AF"),axis.title.y=theme_text(size=14,face="bold",colour="#1980AF"))+scale_fill_manual(values=(brewer.pal(8,"Set1")))+facet_grid(facets=.~variable)+scale_x_discrete(name="Samples")+scale_y_continuous(name="No. of\nPeaks")
+
+# save
+ggsave('~/chip/projects/rotterdam/peaks_collective1.png')
+
+# facets changed orientation
+ggplot(a,aes(x=samples,y=value,fill=variable))+geom_bar(position="dodge",alpha=0.8)+opts(title="Peak Calling comparison for Nijmegen,Rotterdam, Dahl experiments",axis.text.x=theme_text(size=12,angle=90),axis.title.x=theme_text(size=14,face="bold",colour="#1980AF"),axis.title.y=theme_text(size=14,face="bold",colour="#1980AF"))+scale_fill_manual(values=(brewer.pal(8,"Set1")))+facet_grid(facets=variable~.)+scale_x_discrete(name="Samples")+scale_y_continuous(name="No. of\nPeaks")
+# saving
+ggsave('~/chip/projects/rotterdam/peaks_collective5.png')
+
+# annotation plotting
+anno<-read.csv('~/chip/projects/dahl/anno.csv',sep='\t')
+a=melt(anno)
+ggplot(a,aes(x=samples,y=value,fill=variable))+geom_bar(position="dodge",alpha=0.8)+opts(title="Peak Calling comparison for Nijmegen,Rotterdam, Dahl experiments",axis.text.x=theme_text(size=12,angle=90),axis.title.x=theme_text(size=14,face="bold",colour="#1980AF"),axis.title.y=theme_text(size=14,face="bold",colour="#1980AF"))+scale_fill_manual(values=(brewer.pal(8,"Dark2")))+scale_x_discrete(name="Samples")+scale_y_continuous(name="No. of\nPeaks")
+ggsave('~/chip/projects/dahl/anno2.png')
+
+#### plotting annotations
+anno=read.csv('~/chip/projects/dahl/anno.csv',sep='\t')
+melted=melt(anno)
+qplot(x=samples,fill=variable,y=value,data=na.omit(melted),geom="bar",position="dodge")+scale_fill_manual(values=c(brewer.pal(8,"Dark2")))+scale_color_discrete(name="Genomic Regions")+opts(title="Difference in Annotations while using control from three different experiments")+scale_y_continuous('No. of Peaks')
+ggsave('~/chip/projects/dahl/annoCompare.png')

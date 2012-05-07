@@ -1,0 +1,29 @@
+# 2-d plot data
+# inspiration : http://tolstoy.newcastle.edu.au/R/e11/help/10/09/8062.html
+# inspiration2 : http://lmdvr.r-forge.r-project.org/figures/figures.html
+# inspiration3 : http://casoilresource.lawr.ucdavis.edu/drupal/node/371
+n <- 60
+m <- 50
+x <- seq(-4,4, len=m)
+
+
+# Make up some fake y data
+
+y <- matrix(NA, n, m)
+for (i in 1:n) y[i,] <- dnorm(x)*runif(m, 0.5,1)
+
+par(bg="black")
+yrange <- range(c(y, y+n/20))
+
+plot(x, x, type="n", axes=FALSE, bg="black", ylim=yrange)
+
+for (i in n:1) {
+
+   y1 <- c(y[i,] + i/20, 0, 0)
+   x1 <- c(x, x[m], x[1])
+   polygon(x1,y1,col="black")
+
+
+   lines(x, y[i,] + i/20, col="white")
+
+} 
