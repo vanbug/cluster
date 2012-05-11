@@ -1,0 +1,27 @@
+# Author : Sukhdeep Singh
+# Organization : Max Planck
+# Usage : qsub -pe smp 8-15 tophat.qsub $1 $2
+######################################################################
+
+#!/bin/bash
+# qsub parameters beginning with #$
+# Use bash as the interpreter
+#$ -S /bin/bash
+#before executing the command thange to the working directory
+#$ -cwd
+#set your mailaddress
+#$ -M sukhdeeps@biotec.tu-dresden.de
+# we want a mail on beginning and end of the job 'ADD $ IN START TO ACTIVATE E-EMAIL NOTIFICATION'
+# -m be
+#submit the complete environment to the execution host
+#$ -V
+# merge stdout and stderr
+#$ -j y
+# set your output file
+# -o tophat_qsub.log
+# exporting LD Library Path
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/share/apps/lib/
+
+#now we can run our command here.
+tophat --keep-tmp -p $NSLOTS -G /projects/grub/archive/Mus_musculus/UCSC/mm9/Annotation/Genes/genes.gtf -o $1_topout /biodata/biodb/ABG/genomes/bowtie2/mm9 $1
+#cufflinks -p $NSLOTS -o $1_clout $1 2> $1_cufflinks.log

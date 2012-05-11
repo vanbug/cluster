@@ -1,0 +1,23 @@
+# multithread script for sam2rmdup.sh to run single sample on a	different processor
+# Author : Sukhdeep Singh
+# Organization : Max Planck
+# Usage : qsub ~/src/useFul/pBWA/sam2rmdup_thread.qsub $1
+# $1 = sam sample file
+######################################################################
+
+#!/bin/bash
+# qsub parameters beginning with #$
+# Use bash as the interpreter
+#$ -S /bin/bash
+#before executing the command thange to the working directory
+#$ -cwd
+#submit the complete environment to the execution host
+#$ -V
+# merge stdout and stderr
+#$ -j y
+file=$1
+# set your output file
+#$ -o $file.txt
+
+#now we can run our command here.
+sh ~/src/pipes/sam2rmdup.sh $1 2> $1.pipeLog.txt

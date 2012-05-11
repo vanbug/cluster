@@ -1,0 +1,25 @@
+# Author : Sukhdeep Singh
+# Organization : Max Planck
+# template for qsub scripts
+# Usage : qsub /home/genom/sukhdeeps/src/qsub/macs14.qsub sample.bed control.bed
+######################################################################
+
+#!/bin/bash
+# qsub parameters beginning with #$
+# Use bash as the interpreter
+#$ -S /bin/bash
+#before executing the command thange to the working directory
+#$ -cwd
+#set your mailaddress
+#$ -M sukhdeeps@biotec.tu-dresden.de
+# we want a mail on beginning and end of the job 'ADD $ IN START TO ACTIVATE E-EMAIL NOTIFICATION'
+# -m be
+#submit the complete environment to the execution host
+#$ -V
+# merge stdout and stderr
+#$ -j y
+# set your output file
+# -o echo.log
+
+#now we can run our command here.
+/home/genom/sukhdeeps/src/shell/macs14.sh $1 $2 
